@@ -58,4 +58,63 @@ $ reboot                                    reboot
 
 $ logout                                    logout
 
-    
+
+
+################################################ Files and dir #########################################################
+
+$ cd /home                                  go to dir home
+
+$ cd ..                                     go to dir level up
+
+$ cd ../..                                  go to dir 2 levels up
+
+$ cd                                        go to home dir
+
+$ cd ~user                                  go to home dir of user
+
+$ cd -                                      go to previous directory
+
+$ pwd                                       show current dir
+
+$ ls                                        show current directory contents
+
+$ ls -F                                     show current dir contents with symbols type of
+
+$ ls -l                                     show current dir contents with details    
+
+$ ls -a                                     show hide files and dir
+
+$ ls *[0-9]*                                show files and directories that have numbers in their names
+
+$ tree                                      show tree with files and dirs from /
+
+$ mkdir dir1                                create dir "dir1"
+
+$ mkdir dir1 dir2                           create 2 dirs in same time
+
+$ mkdir -p /tmp/dir1/dir2                   create tree of dirs
+
+$ rm -f file1                               delete "file1"
+
+$ rmdir dir1                                delete dir "dir1"
+
+$ rm -rf dir1                               delete dir "dir1" and recursive all contents inside
+
+$ rm -rf dir1 dir2                          delete 2 dirs and recursive all contets inside
+
+$ mv dir1 mydir                             rename dir1 to mydir
+
+$ cp file1 file2                            copy file1 to file2
+
+$ cp dir/* .                                copy all from dir to current dir
+
+$ cp -a /tmp/dir1 .                         copy dir1 with all of inside to current dir
+
+$ cp -a dir1 dir2                           copy dir1 to dir2
+
+$ ln -s file1 lnk1                          create symlink
+
+$ ln file1 lnk1                             create hard link to file or dir
+
+
+
