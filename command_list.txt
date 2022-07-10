@@ -1,0 +1,42 @@
+################################################ LIST OF LINUX COMMANDS ################################################
+
+
+
+
+################################################ System informations ###################################################
+
+$ arch                                      show arch of computer
+
+$ uname - r                                 show kernel version in use
+
+$ dmidecode -q                              show harware system components
+
+$ hdparm -i /dev/hda                        show hard drive specifications
+
+$ hdparm -tT /dev/sda                       test the performance of reading data from the hard drive
+
+$ cat /proc/cpuinfo                         show cpu info
+
+$ cat /proc/intrrupts                       show show interrupts
+
+$ cat /proc/meminfo                         show memory info
+
+$ cat /proc/swaps                           show swap(s) files
+
+$ cat /proc/version                         show kernel version
+
+$ cat /proc/net/dev                         show net intarfaces
+
+$ cat /proc/mounts                          show mount file systems 
+
+$ lspci -tv                                 show tree PCI devices
+
+$ lsusb -tv                                 show tree USB devices 
+
+$ date                                      show system date
+
+$ cal 2020                                  show calendar 2020 
+
+$ date 031311002020.00                      show date like MMDDHHMMYYYY.SS
+
+$ clock -w                                  save system time to BIOS
