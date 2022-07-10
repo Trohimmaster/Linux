@@ -40,3 +40,22 @@ $ cal 2020                                  show calendar 2020
 $ date 031311002020.00                      show date like MMDDHHMMYYYY.SS
 
 $ clock -w                                  save system time to BIOS
+
+
+
+################################################ Stop system ###########################################################
+
+$ shutdown -h now   
+$ init 0                                    stop system
+$ telinit 0                                 
+
+$ shutdown -h hours:minutes                 schedule system shutdown
+
+$ shutdown -c                               cancel schedule shutdown
+
+$ shutdown -r now
+$ reboot                                    reboot
+
+$ logout                                    logout
+
+    
