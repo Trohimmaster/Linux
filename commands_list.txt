@@ -135,3 +135,29 @@ $ locate "*.ps"                             find all files with names that end i
 $ whereis halt                              show path to binary files, codes, related to halt
 
 $ which halt                                show path to 'halt'
+
+
+
+################################################ Users and groups ###################################################
+
+$ groupadd group_name                                        create new group
+
+$ groupdel group_name                                        delete group
+
+$ groupmod -n new_group old_group                            rename old_group to new_groupe
+
+$ useradd user1                                              create user
+
+$ userdel -r user1                                           delete user
+
+$ useradd -g admin -d /home/user1 -s /bin/bash user1         create user, create home dir to this user, add shell, and add him to group 'admin'
+
+$ passwd                                                     change password
+
+$ passwd user1                                               change password to user1
+
+$ pwck                                                       check /etc/passwd and /etc/shadow 
+
+$ grpck                                                      check /etc/group
+
+
