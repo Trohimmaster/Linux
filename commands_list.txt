@@ -118,3 +118,20 @@ $ ln file1 lnk1                             create hard link to file or dir
 
 
 
+################################################ Search files ######################################################
+
+$ fine / -name file1                        search file or dir 'file1', start search from '/' 
+
+$ find / -user user1                        search file or dir, with owner user1, start search from '/'
+
+$ find /home/user1 -name "*.bin"            search file or dir, with names that end in '.bin', start search from '/home/user1'
+
+$ find /usr/bin -type f -atime +100         find all files and dir in /usr/bin, what have time to use more then 100 days
+
+$ find /usr/bin -type f -mtime -10          find all fils in /usr/bin, what would be create or changed last 10 days
+
+$ locate "*.ps"                             find all files with names that end in '.ps'. But at first exec command 'updatedb'
+
+$ whereis halt                              show path to binary files, codes, related to halt
+
+$ which halt                                show path to 'halt'
