@@ -161,3 +161,13 @@ $ pwck                                                       check /etc/passwd a
 $ grpck                                                      check /etc/group
 
 
+
+################################################ Disk space #########################################################
+
+$ df -h                                                      show information about mounted partitions showing total and used space
+
+$ du -sh dir1                                                show used size of dir1
+
+$ du -sk * | sort -rn                                        show size and name of files and dirs with sort
+
+$ rpm -qa --gf '%10{SIZE}\t%{NAME}\n' | sort -k1,1n          show size of used disk space, what used rpm-package
