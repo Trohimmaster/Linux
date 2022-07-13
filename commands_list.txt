@@ -171,3 +171,35 @@ $ du -sh dir1                                                show used size of d
 $ du -sk * | sort -rn                                        show size and name of files and dirs with sort
 
 $ rpm -qa --gf '%10{SIZE}\t%{NAME}\n' | sort -k1,1n          show size of used disk space, what used rpm-package
+
+
+
+################################################ File permissions ###################################################
+
+$ ls -lh                                                     show file and dir permissions in current dir
+
+$ ls /tmp | pr -T5 -W$COLUMNS                                print the contents of the tmp directory, and split the output into 5 columns
+
+$ chmod ugo+rwx dir1                                         add all permission to dir1, alternative "chmod 777 dir1"
+
+$ chmod go-rwx dir1                                          take away all permissions from groups and other users to dir1
+
+$ chown user1 file1                                          add owner user1 to file1 
+
+$ chown -R user1 dir1                                        add owner recursive user1 to dir1
+
+$ chgrp group1 file1                                         change group-owner to file1 on group1
+
+$ chown user1:group1 file1                                   change user-owner and group-owner to file1
+
+$ find / -perm -u+s                                          find all files in system with SUID
+
+$ chmod u+s /bin/binary1                                     add SUID to file 'binary1'. With SUID all users can execute file with owner perm
+
+$ chmod u-s /bin/binary1                                     remove SUID from file 'binary1'
+
+$ chmod g+s /home/dir1                                       add SGID to dir1
+
+$ chmod o+t /home/dir1                                       add STIKY to dir1. With STIKY only owner can delete files
+
+
