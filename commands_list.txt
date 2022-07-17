@@ -241,3 +241,23 @@ $ zip file1.zip file1                                        create compress zip
 $ zip -r file1.zip file2 file3 file4                         create compress zip archive with file2, file3, file4 inside
 
 $ unzip file1.zip                                            extract and uncompress zip archive
+
+
+################################################ View contents of the file ############################################
+
+$ cat file1                                                  write the contents of a file to standard output
+
+$ tac file1                                                  write the contents of a file to standard output in reverse
+
+$ more file1                                                 paging output content from file1
+
+$ less file1                                                 paging output content from file1 and the ability to turn pages up and down and etc
+
+$ head -2 file1                                              output the first two lines from file1
+
+$ tail -2 file1                                              output the last two lines from file1
+
+$ tail -f /var/log/ngnix/errors.log                          output file contents as text appears 
+
+
+
