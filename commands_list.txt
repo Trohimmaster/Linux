@@ -203,3 +203,41 @@ $ chmod g+s /home/dir1                                       add SGID to dir1
 $ chmod o+t /home/dir1                                       add STIKY to dir1. With STIKY only owner can delete files
 
 
+
+################################################ Archive and file compression ########################################
+
+$ bunzip2 file1.bz2
+                                                             uncompress file1
+$ gunzip file1.gz
+
+$ bzip2 file1
+                                                             compress file1
+$ gzip file1                 
+
+$ gzip -9 file1                                              compress file1 max
+
+$ rar a file1.rar file2                                      create rar archive file1.rar and add file2 inside
+
+$ rar a file1.rar file2 file3 fil4                           create rar archive file1.rar and add file2, file3, file4 inside
+
+$ unrar x file1.rar                                          extract rar-archive
+
+$ tar -cvf archive.tar file1                                 create tar-archive with file1 inside
+
+$ tar -cvf archive.tar file1 file2 file3                     create tar-archive with file1, file2, file3 inside
+
+$ tar -tf archive.tar                                        show archive content
+
+$ tar -xvf archive.tar                                       extract archive
+
+$ tar -xvf archive.tar -C /tmp                               extract archive to /tmp
+
+$ tar -cvfz archive.tar.gz dir1                              create archive and compress him with gzip
+
+$ tar -xvfz archive.tar.gz                                   extract and uncopress archive
+
+$ zip file1.zip file1                                        create compress zip archive
+
+$ zip -r file1.zip file2 file3 file4                         create compress zip archive with file2, file3, file4 inside
+
+$ unzip file1.zip                                            extract and uncompress zip archive
