@@ -243,6 +243,7 @@ $ zip -r file1.zip file2 file3 file4                         create compress zip
 $ unzip file1.zip                                            extract and uncompress zip archive
 
 
+
 ################################################ View contents of the file ############################################
 
 $ cat file1                                                  write the contents of a file to standard output
@@ -260,4 +261,58 @@ $ tail -2 file1                                              output the last two
 $ tail -f /var/log/ngnix/errors.log                          output file contents as text appears 
 
 
+
+################################################ Text manipulation #####################################################
+
+$ cat file | grep -i "Hello_world" > result.txt              find word 'Hello_world' in file and write this to result.txt
+
+$ grep err /var/log/messages                                 output all lines what have 'err' from file /var/log/messages
+
+$ grep ^err /var/log/messages                                output all lines what start 'err' from file /var/log/messages
+
+$ grep [0-9] /var/log/messages                               output all lines what have numbers from file /var/log/messages
+
+$ grep err /var/log/*                                        output all lines what have 'err' from all files in dir /var/log/
+
+$ sed 's/stringa1/stringa2/g' example.txt                    output content from example.txt and change word 'string1' on 'string2'
+
+$ sed '/^$/d' example.txt                                    delete empty lines from example.txt
+
+$ sed '/ *#/d; /^$/d' example.txt                            delete empty lines and comments from example.txt
+
+$ echo 'test' | tr '[:lower:]' '[:upper:]'                   сonvert lowercase symbols to uppercase
+
+$ sed -e '1d' result.txt                                     delete first symbol from result.txt
+
+$ sed -n '/string1/p'                                        output only lines what have 'string1'
+
+$ sed -e 's/ *$//' example.txt                               delete empty symbols in the end of all lines
+
+$ sed -e 's/string1//g' example.txt                          delete line 'string1' from text, but do not change something else
+
+$ sed -n '1,8p;5q' example.txt                               take first eight lines from example.txt and output first 5 lines
+
+$ sed -n '5p;5q' example.txt                                 output only fifth line
+
+$ sed -e 's/0*/0/g' example.txt                              replace a sequence of any number of zeros with a single zero
+
+$ cat -n example.txt                                         number lines when outputting file content
+
+$ cat example.txt | awk 'NR%2==1'                            do not output even lines when outputting file content
+
+$ echo a b c | awk '{print $1}'                              output the first column. Default separations, sabs, spaces, by character
+
+$ echo a b c | awk '{print $1,$3}'                           output the first and third columns. Default separations, sabs, spaces, by character
+
+$ paste file1 file2                                          merge file1 and file2 as a table
+
+$ paste -d '+' file1 file2                                   merge file1 and file2 as a table with separation '+'
+
+$ sort file1                                                 sort content from file1
+
+$ sort file1 file2 | uniq                                    sort content from 2 files and dont output replays
+
+$ comm -1 file1 file2                                        compare contents 2 files, but not show content from file1
+
+$ comm -2 file1 file2                                        compare contents 2 files, but not show content from file2 
 
