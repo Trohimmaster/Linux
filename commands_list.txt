@@ -1,0 +1,318 @@
+################################################ LIST OF LINUX COMMANDS ################################################
+
+
+
+
+################################################ System informations ###################################################
+
+$ arch                                      show arch of computer
+
+$ uname - r                                 show kernel version in use
+
+$ dmidecode -q                              show harware system components
+
+$ hdparm -i /dev/hda                        show hard drive specifications
+
+$ hdparm -tT /dev/sda                       test the performance of reading data from the hard drive
+
+$ cat /proc/cpuinfo                         show cpu info
+
+$ cat /proc/intrrupts                       show show interrupts
+
+$ cat /proc/meminfo                         show memory info
+
+$ cat /proc/swaps                           show swap(s) files
+
+$ cat /proc/version                         show kernel version
+
+$ cat /proc/net/dev                         show net intarfaces
+
+$ cat /proc/mounts                          show mount file systems 
+
+$ lspci -tv                                 show tree PCI devices
+
+$ lsusb -tv                                 show tree USB devices 
+
+$ date                                      show system date
+
+$ cal 2020                                  show calendar 2020 
+
+$ date 031311002020.00                      show date like MMDDHHMMYYYY.SS
+
+$ clock -w                                  save system time to BIOS
+
+
+
+################################################ Stop system ###########################################################
+
+$ shutdown -h now   
+$ init 0                                    stop system
+$ telinit 0                                 
+
+$ shutdown -h hours:minutes                 schedule system shutdown
+
+$ shutdown -c                               cancel schedule shutdown
+
+$ shutdown -r now
+$ reboot                                    reboot
+
+$ logout                                    logout
+
+
+
+################################################ Files and dir #########################################################
+
+$ cd /home                                  go to dir home
+
+$ cd ..                                     go to dir level up
+
+$ cd ../..                                  go to dir 2 levels up
+
+$ cd                                        go to home dir
+
+$ cd ~user                                  go to home dir of user
+
+$ cd -                                      go to previous directory
+
+$ pwd                                       show current dir
+
+$ ls                                        show current directory contents
+
+$ ls -F                                     show current dir contents with symbols type of
+
+$ ls -l                                     show current dir contents with details    
+
+$ ls -a                                     show hide files and dir
+
+$ ls *[0-9]*                                show files and directories that have numbers in their names
+
+$ tree                                      show tree with files and dirs from /
+
+$ mkdir dir1                                create dir "dir1"
+
+$ mkdir dir1 dir2                           create 2 dirs in same time
+
+$ mkdir -p /tmp/dir1/dir2                   create tree of dirs
+
+$ rm -f file1                               delete "file1"
+
+$ rmdir dir1                                delete dir "dir1"
+
+$ rm -rf dir1                               delete dir "dir1" and recursive all contents inside
+
+$ rm -rf dir1 dir2                          delete 2 dirs and recursive all contets inside
+
+$ mv dir1 mydir                             rename dir1 to mydir
+
+$ cp file1 file2                            copy file1 to file2
+
+$ cp dir/* .                                copy all from dir to current dir
+
+$ cp -a /tmp/dir1 .                         copy dir1 with all of inside to current dir
+
+$ cp -a dir1 dir2                           copy dir1 to dir2
+
+$ ln -s file1 lnk1                          create symlink
+
+$ ln file1 lnk1                             create hard link to file or dir
+
+
+
+################################################ Search files ######################################################
+
+$ fine / -name file1                        search file or dir 'file1', start search from '/' 
+
+$ find / -user user1                        search file or dir, with owner user1, start search from '/'
+
+$ find /home/user1 -name "*.bin"            search file or dir, with names that end in '.bin', start search from '/home/user1'
+
+$ find /usr/bin -type f -atime +100         find all files and dir in /usr/bin, what have time to use more then 100 days
+
+$ find /usr/bin -type f -mtime -10          find all fils in /usr/bin, what would be create or changed last 10 days
+
+$ locate "*.ps"                             find all files with names that end in '.ps'. But at first exec command 'updatedb'
+
+$ whereis halt                              show path to binary files, codes, related to halt
+
+$ which halt                                show path to 'halt'
+
+
+
+################################################ Users and groups ###################################################
+
+$ groupadd group_name                                        create new group
+
+$ groupdel group_name                                        delete group
+
+$ groupmod -n new_group old_group                            rename old_group to new_groupe
+
+$ useradd user1                                              create user
+
+$ userdel -r user1                                           delete user
+
+$ useradd -g admin -d /home/user1 -s /bin/bash user1         create user, create home dir to this user, add shell, and add him to group 'admin'
+
+$ passwd                                                     change password
+
+$ passwd user1                                               change password to user1
+
+$ pwck                                                       check /etc/passwd and /etc/shadow 
+
+$ grpck                                                      check /etc/group
+
+
+
+################################################ Disk space #########################################################
+
+$ df -h                                                      show information about mounted partitions showing total and used space
+
+$ du -sh dir1                                                show used size of dir1
+
+$ du -sk * | sort -rn                                        show size and name of files and dirs with sort
+
+$ rpm -qa --gf '%10{SIZE}\t%{NAME}\n' | sort -k1,1n          show size of used disk space, what used rpm-package
+
+
+
+################################################ File permissions ###################################################
+
+$ ls -lh                                                     show file and dir permissions in current dir
+
+$ ls /tmp | pr -T5 -W$COLUMNS                                print the contents of the tmp directory, and split the output into 5 columns
+
+$ chmod ugo+rwx dir1                                         add all permission to dir1, alternative "chmod 777 dir1"
+
+$ chmod go-rwx dir1                                          take away all permissions from groups and other users to dir1
+
+$ chown user1 file1                                          add owner user1 to file1 
+
+$ chown -R user1 dir1                                        add owner recursive user1 to dir1
+
+$ chgrp group1 file1                                         change group-owner to file1 on group1
+
+$ chown user1:group1 file1                                   change user-owner and group-owner to file1
+
+$ find / -perm -u+s                                          find all files in system with SUID
+
+$ chmod u+s /bin/binary1                                     add SUID to file 'binary1'. With SUID all users can execute file with owner perm
+
+$ chmod u-s /bin/binary1                                     remove SUID from file 'binary1'
+
+$ chmod g+s /home/dir1                                       add SGID to dir1
+
+$ chmod o+t /home/dir1                                       add STIKY to dir1. With STIKY only owner can delete files
+
+
+
+################################################ Archive and file compression ########################################
+
+$ bunzip2 file1.bz2
+                                                             uncompress file1
+$ gunzip file1.gz
+
+$ bzip2 file1
+                                                             compress file1
+$ gzip file1                 
+
+$ gzip -9 file1                                              compress file1 max
+
+$ rar a file1.rar file2                                      create rar archive file1.rar and add file2 inside
+
+$ rar a file1.rar file2 file3 fil4                           create rar archive file1.rar and add file2, file3, file4 inside
+
+$ unrar x file1.rar                                          extract rar-archive
+
+$ tar -cvf archive.tar file1                                 create tar-archive with file1 inside
+
+$ tar -cvf archive.tar file1 file2 file3                     create tar-archive with file1, file2, file3 inside
+
+$ tar -tf archive.tar                                        show archive content
+
+$ tar -xvf archive.tar                                       extract archive
+
+$ tar -xvf archive.tar -C /tmp                               extract archive to /tmp
+
+$ tar -cvfz archive.tar.gz dir1                              create archive and compress him with gzip
+
+$ tar -xvfz archive.tar.gz                                   extract and uncopress archive
+
+$ zip file1.zip file1                                        create compress zip archive
+
+$ zip -r file1.zip file2 file3 file4                         create compress zip archive with file2, file3, file4 inside
+
+$ unzip file1.zip                                            extract and uncompress zip archive
+
+
+
+################################################ View contents of the file ############################################
+
+$ cat file1                                                  write the contents of a file to standard output
+
+$ tac file1                                                  write the contents of a file to standard output in reverse
+
+$ more file1                                                 paging output content from file1
+
+$ less file1                                                 paging output content from file1 and the ability to turn pages up and down and etc
+
+$ head -2 file1                                              output the first two lines from file1
+
+$ tail -2 file1                                              output the last two lines from file1
+
+$ tail -f /var/log/ngnix/errors.log                          output file contents as text appears 
+
+
+
+################################################ Text manipulation #####################################################
+
+$ cat file | grep -i "Hello_world" > result.txt              find word 'Hello_world' in file and write this to result.txt
+
+$ grep err /var/log/messages                                 output all lines what have 'err' from file /var/log/messages
+
+$ grep ^err /var/log/messages                                output all lines what start 'err' from file /var/log/messages
+
+$ grep [0-9] /var/log/messages                               output all lines what have numbers from file /var/log/messages
+
+$ grep err /var/log/*                                        output all lines what have 'err' from all files in dir /var/log/
+
+$ sed 's/stringa1/stringa2/g' example.txt                    output content from example.txt and change word 'string1' on 'string2'
+
+$ sed '/^$/d' example.txt                                    delete empty lines from example.txt
+
+$ sed '/ *#/d; /^$/d' example.txt                            delete empty lines and comments from example.txt
+
+$ echo 'test' | tr '[:lower:]' '[:upper:]'                   сonvert lowercase symbols to uppercase
+
+$ sed -e '1d' result.txt                                     delete first symbol from result.txt
+
+$ sed -n '/string1/p'                                        output only lines what have 'string1'
+
+$ sed -e 's/ *$//' example.txt                               delete empty symbols in the end of all lines
+
+$ sed -e 's/string1//g' example.txt                          delete line 'string1' from text, but do not change something else
+
+$ sed -n '1,8p;5q' example.txt                               take first eight lines from example.txt and output first 5 lines
+
+$ sed -n '5p;5q' example.txt                                 output only fifth line
+
+$ sed -e 's/0*/0/g' example.txt                              replace a sequence of any number of zeros with a single zero
+
+$ cat -n example.txt                                         number lines when outputting file content
+
+$ cat example.txt | awk 'NR%2==1'                            do not output even lines when outputting file content
+
+$ echo a b c | awk '{print $1}'                              output the first column. Default separations, sabs, spaces, by character
+
+$ echo a b c | awk '{print $1,$3}'                           output the first and third columns. Default separations, sabs, spaces, by character
+
+$ paste file1 file2                                          merge file1 and file2 as a table
+
+$ paste -d '+' file1 file2                                   merge file1 and file2 as a table with separation '+'
+
+$ sort file1                                                 sort content from file1
+
+$ sort file1 file2 | uniq                                    sort content from 2 files and dont output replays
+
+$ comm -1 file1 file2                                        compare contents 2 files, but not show content from file1
+
+$ comm -2 file1 file2                                        compare contents 2 files, but not show content from file2 
+
