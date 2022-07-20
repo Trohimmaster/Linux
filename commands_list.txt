@@ -1,6 +1,16 @@
 ################################################ LIST OF LINUX COMMANDS ################################################
 
-
+- System informations
+- Stop system
+- Files and dir
+- Search files
+- Users and groups
+- Disk space
+- File permissions
+- Archive and file compression
+- View contents of the file
+- Text manipulation
+- Monitoring and Debuging
 
 
 ################################################ System informations ###################################################
@@ -315,4 +325,43 @@ $ sort file1 file2 | uniq                                    sort content from 2
 $ comm -1 file1 file2                                        compare contents 2 files, but not show content from file1
 
 $ comm -2 file1 file2                                        compare contents 2 files, but not show content from file2 
+
+
+
+################################################ Monitoring and Debuging ##############################################
+
+$ top                                                        show worked processes, used resources and etc(with online update info)
+
+$ ps -aux                                                    show worked processes, used resources and etc
+
+$ pstree                                                     show tree of processes
+
+$ kill -9 1234                                               
+                                                             kill process with PID 1234(Without data integrity)
+$ kill -KILL 1234                                                 
+
+$ kill -TERM 1234                                            Correct stop process with PID 1234
+
+$ kill -1 1234                       
+                                                             Force a process with PID 1234 to reread a config file
+$ kill -HUP 1234
+
+$ lsof -p 1234                                               show list of files what opened by process with PID 1234
+
+$ lsof /home/user1                                           show list of opened files from dir /home/user1
+
+$ watch -n1 'cat /proc/interrupts'                           show list of interrupts in real time
+
+$ last reboot                                                show history of reboot system
+
+$ last user1                                                 show history of auth user1 in system
+
+$ free -m                                                    show state of RAM in MB
+
+$ tcpdump -i ens192                                          show network analyze on interface ens192
+
+$ iotop                                                      show monitoring of disk input/output
+
+$ nethogs                                                    show network activity of processes in system
+
 
