@@ -166,6 +166,14 @@ $ passwd                                                     change password
 
 $ passwd user1                                               change password to user1
 
+$ passwd -S user1                                           
+                                                             check password info user1
+$ passwd --status user1
+
+$ passwd -u user1                                            unlock account user1
+
+$ passwd -l user1                                            lock account user1
+
 $ pwck                                                       check /etc/passwd and /etc/shadow 
 
 $ grpck                                                      check /etc/group
