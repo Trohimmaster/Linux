@@ -11,7 +11,10 @@
 - View contents of the file
 - Text manipulation
 - Monitoring and Debuging
-
+- RPM packages
+- Yum package manager
+- Deb packages
+- Apt manager
 
 ################################################ System informations ###################################################
 
@@ -165,6 +168,14 @@ $ useradd -g admin -d /home/user1 -s /bin/bash user1         create user, create
 $ passwd                                                     change password
 
 $ passwd user1                                               change password to user1
+
+$ passwd -S user1                                           
+                                                             check password info user1
+$ passwd --status user1
+
+$ passwd -u user1                                            unlock account user1
+
+$ passwd -l user1                                            lock account user1
 
 $ pwck                                                       check /etc/passwd and /etc/shadow 
 
@@ -375,3 +386,75 @@ $ iotop                                                      show monitoring of 
 $ nethogs                                                    show network activity of processes in system
 
 
+
+################################################ RPM packages ############################################################
+
+$ rpm -ivh package.rpm                                       install package with progress bar and output messages
+
+$ rpm -ivh --nodeps package.rpm                              install package with progress bar and output messages without dependency control
+
+$ rpm -U package.rpm                                         update package without changes in conf files
+
+$ rpm -F package.rpm                                         update package only if package was installed early
+
+$ rpm -e package.rpm                                         remove package
+
+$ rpm -qa                                                    show list with all installed packages
+
+$ rpm -qi package_name                                       show info about package
+
+$ rpm -ql package_name                                       show files list included in package
+
+$ rpm -qc package_name                                       show conf files list included in package
+
+$ rpm -qf /etc/nginx/nginx.conf                              check which package afile belongs to
+
+$ rpm build --rebuild package_name.src.rpm                   build package from source
+
+
+
+################################################ Yum package manager #####################################################
+
+$ yum install package_name                                   download and install package
+
+$ yum update                                                 update all packages and system
+
+$ yum update package_name                                    update package
+
+$ yum remove package_name                                    remove package
+
+$ yum list                                                   show list all of installed packages
+
+$ yum search package_name                                    find package in repository
+
+$ yum clean all                                              clear cache
+
+
+
+################################################ Deb packages ###########################################################
+
+$ dpkg -i package.deb                                        install or update package
+
+$ dpkg -r package.deb                                        remove package
+
+$ dpkg -l                                                    show all installed packages
+
+$ dpkg -s package_name                                       show info about package
+
+$ dpkg -L package_name                                       show files list included in package
+
+
+
+################################################ Apt package manager ####################################################
+
+$ apt install package_name                                   install or update package
+
+$ apt update                                                 get updates packages
+
+$ apt upgrade                                                update packages
+
+$ apt remove package_name                                    remove package but save conf files
+
+$ apt purge package_name                                     remove package with conf files
+
+$ apt autoclean                                              remove old download package files
