@@ -11,7 +11,7 @@
 - View contents of the file
 - Text manipulation
 - Monitoring and Debuging
-
+- RPM Packages
 
 ################################################ System informations ###################################################
 
@@ -381,5 +381,49 @@ $ tcpdump -i ens192                                          show network analyz
 $ iotop                                                      show monitoring of disk input/output
 
 $ nethogs                                                    show network activity of processes in system
+
+
+
+################################################ RPM packages ############################################################
+
+$ rpm -ivh package.rpm                                       install package with progress bar and output messages
+
+$ rpm -ivh --nodeps package.rpm                              install package with progress bar and output messages without dependency control
+
+$ rpm -U package.rpm                                         update package without changes in conf files
+
+$ rpm -F package.rpm                                         update package only if package was installed early
+
+$ rpm -e package.rpm                                         remove package
+
+$ rpm -qa                                                    show list with all installed packages
+
+$ rpm -qi package_name                                       show info about package
+
+$ rpm -ql package_name                                       show files list included in package
+
+$ rpm -qc package_name                                       show conf files list included in package
+
+$ rpm -qf /etc/nginx/nginx.conf                              check which package afile belongs to
+
+$ rpm build --rebuild package_name.src.rpm                   build package from source
+
+
+
+################################################ Yum package manager #####################################################
+
+$ yum install package_name                                   download and install package
+
+$ yum update                                                 update all packages and system
+
+$ yum update package_name                                    update package
+
+$ yum remove package_name                                    remove package
+
+$ yum list                                                   show list all of installed packages
+
+$ yum search package_name                                    find package in repository
+
+$ yum clean all                                              clear cache
 
 
