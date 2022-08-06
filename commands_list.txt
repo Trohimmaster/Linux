@@ -11,7 +11,10 @@
 - View contents of the file
 - Text manipulation
 - Monitoring and Debuging
-- RPM Packages
+- RPM packages
+- Yum package manager
+- Deb packages
+- Apt manager
 
 ################################################ System informations ###################################################
 
@@ -427,3 +430,31 @@ $ yum search package_name                                    find package in rep
 $ yum clean all                                              clear cache
 
 
+
+################################################ Deb packages ###########################################################
+
+$ dpkg -i package.deb                                        install or update package
+
+$ dpkg -r package.deb                                        remove package
+
+$ dpkg -l                                                    show all installed packages
+
+$ dpkg -s package_name                                       show info about package
+
+$ dpkg -L package_name                                       show files list included in package
+
+
+
+################################################ Apt package manager ####################################################
+
+$ apt install package_name                                   install or update package
+
+$ apt update                                                 get updates packages
+
+$ apt upgrade                                                update packages
+
+$ apt remove package_name                                    remove package but save conf files
+
+$ apt purge package_name                                     remove package with conf files
+
+$ apt autoclean                                              remove old download package files
